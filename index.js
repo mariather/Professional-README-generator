@@ -84,7 +84,7 @@ const questions = [
             "None",
             "Apache 2.0 License",
             "Boost Software License 1.0",
-            "GNU AGPLv",
+            "GNU AGPLv3",
             "GNU GPLv3",
             "GNU LGPLv3",
             "MIT License",
