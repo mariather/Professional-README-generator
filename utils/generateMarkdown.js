@@ -48,8 +48,9 @@ function renderLicenseBadge(license) {
 }
 
 
-// TODO: Create a function that returns the license link
+// function that returns the license link
 // If there is no license, return an empty string
+
 function renderLicenseLink(license) {
   let licenseLink = "";
   switch (license) {
@@ -98,17 +99,65 @@ function renderLicenseLink(license) {
 }
 
 
-// TODO: Create a function that returns the license section of README
+//function that returns license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   return `[![License](${renderLicenseBadge(license)})](${renderLicenseLink(license)})`
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
 
-`;
+function generateMarkdown(data) {
+  if (data.install_code) {
+    data.install_code = `\`\`\`${data.install_code}\`\`\``
+  } else {
+    data.install_code = ``
+  }
+
+  if (data.usage) {
+    data.usage = `\`\`\`${data.usage_code}\`\`\``
+  } else {
+    data.usage = ``
+  }
+
+  return `# ${data.title}
+  
+  ${renderLicenseSection(data.license)}
+  
+  click to see deployment:${data.link}  
+  
+  ## Description
+  
+  ${data.description}
+  
+
+  ## Usage
+  
+  ${data.usage}  
+
+  ## Test-Instructions
+  
+  ${data.instructions}
+ 
+  
+  ## Status 
+
+  ${data.status}
+  
+  ## License
+  
+  ${data.license}
+  
+  ## Technologies Used
+  
+  ${data.technologies}
+  
+ 
+  
+  GitHub Username: [@${data.github}](https://github.com/${data.github})  
+  
+  Email: [${data.email}](mailto:${data.email})  
+  `;
 }
 
 module.exports = generateMarkdown;
