@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+//  thi function will  return a license badge based on which license is passed in the index
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   let licenseBadge = "";
@@ -105,7 +105,7 @@ function renderLicenseSection(license) {
   return `[![License](${renderLicenseBadge(license)})](${renderLicenseLink(license)})`
 }
 
-// TODO: Create a function to generate markdown for README
+// function to generate markdowns for README
 
 function generateMarkdown(data) {
   if (data.install_code) {

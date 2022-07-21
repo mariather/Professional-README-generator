@@ -22,17 +22,10 @@ const questions = [
     },
 
     {
-        // main tittle
+        //title of the project
         type: "input",
-        message: "What is the project's title?",
+        message: "Enter the title of the project",
         name: "title",
-
-    },
-    {
-        //subtitle of the project
-        type: "input",
-        message: "Enter the subtitle of the project",
-        name: "subtitle",
     },
 
     {
@@ -112,15 +105,7 @@ const questions = [
 
 // function to write the README file
 function writeToFile(fileName, data) {
-   /* writeToFile(fileName, data, err => {
-        if (err) {
-            return console.log(err);
-      
-            console.log("README.md created successfully")
-        }
-    });
- }*/
-
+   
  fs.writeFile(`${fileName}.md`, generateMarkdown(data), (err) =>
     err ? console.error("error") : console.log("well done"))
 }
